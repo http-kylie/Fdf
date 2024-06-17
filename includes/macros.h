@@ -18,5 +18,6 @@
 # define ERROR_TYPE(x) #x
 # define DEBUG_PRINT(x) printf("DEBUG: &%s is %p\n", #x, (void *)&x)
 # define HEX_BASE "0123456789abcdef"
+# define WHITE 0xFFFFFF
 
 #endif

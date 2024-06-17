@@ -41,6 +41,7 @@ void	exit_perr(const char *error_message);
 /*================================ TEMP ======================================*/
 
 void	print_z_2D(t_map *map);
+void	print_colors(t_map *map);
 void	print_map_mem(t_map *map);
 
 

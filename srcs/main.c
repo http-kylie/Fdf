@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kytan <kytan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 18:53:58 by kytan             #+#    #+#             */
-/*   Updated: 2024/06/16 18:53:58 by kytan            ###   ########.fr       */
+/*   Created: 2024/06/16 18:36:34 by kytan             #+#    #+#             */
+/*   Updated: 2024/06/16 18:36:34 by kytan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "libft.h"
 
-t_map	*init_map(char *file)
+int	main(int ac, char **av)
 {
-	int		fd;
+	char	*file;
 	t_map	*map;
 
-	fd = open(file, O_RDONLY);
-	if (fd < 0)
-		exit_perr(file);
-	map = ft_calloc(1, sizeof(t_map));
-	if (!map)
-		exit_err(MEM_ALLOC_ERROR);
+	if (ac != 2)
+		exit_err(INVALID_ARGS_ERROR);
+	file = av[1];
+	map = init_map(file);
 	print_map_mem(map);
-	parse_map_size(fd, map);
-	alloc_map_mem(map);
-	parse_map_mem(fd, map);
-	close(fd);
-	return (map);
+	printf("\nZ_2D:\n");
+	print_z_2D(map);
+	printf("WHITE: %i", WHITE);
+	printf("\nCOLORS:\n");
+	print_colors(map);
+	free_map_mem(map);
 }

@@ -27,6 +27,21 @@ void	print_z_2D(t_map *map)
 	}
 }
 
+void	print_colors(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < map->height)
+	{
+		j = -1;
+		while (++j < map->width)
+			printf("%#X ", map->colors[i][j]);
+		printf("\n");
+	}
+}
+
 void	print_map_mem(t_map *map)
 {
 	printf("MAP MEMBERS:\n");

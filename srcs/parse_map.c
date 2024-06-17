@@ -11,22 +11,25 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "libft.h"
 
 void	parse_map_size(int fd, t_map *map)
 {
 	char	*line;
+	char	**split;
 
 	line = get_next_line(fd);
-	map->width = find_width(ft_split(line, ' '));
-	if (!map->width)
-		exit_err(MAP_EMPTY_ERROR);
+	split = ft_split(line, ' ');
+	map->width = find_width(split);
 	while (line)
 	{
 		map->height++;
+		printf("height in loop: %i\n", map->height);
 		free(line);
 		line = get_next_line(fd);
 	}
 	free(line);
+	close(fd);
 }
 
 void	parse_map_mem(int fd, t_map *map)
@@ -37,6 +40,7 @@ void	parse_map_mem(int fd, t_map *map)
 	char	**split;
 
 	i = -1;
+	alloc_map_mem(map);
 	while (++i < map->height)
 	{
 		line = get_next_line(fd);
@@ -45,9 +49,10 @@ void	parse_map_mem(int fd, t_map *map)
 		while (split[++j])
 		{
 			map->z_2D[i][j] = ft_atoi(split[j]);
-			map->colors[i][j] = convert_hex_color(split[i], map);
+			map->colors[i][j] = convert_hex_color(split[j], map);
 		}
 		free(line);
 		free_split(split);
 	}
+	close(fd);
 }
