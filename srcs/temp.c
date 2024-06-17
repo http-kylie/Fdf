@@ -51,5 +51,5 @@ void	print_map_mem(t_map *map)
 	printf("colors: %p\n", map->colors);
 	printf("iscolor: %i\n", map->iscolor);
 	printf("min_z: %i\n", map->min_z);
-	printf("max_z: %i\n\n", map->min_z);
+	printf("max_z: %i\n\n", map->max_z);
 }

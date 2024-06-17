@@ -22,7 +22,9 @@ void	parse_map_size(int fd, t_map *map);
 void	parse_map_mem(int fd, t_map *map);
 
 int		find_width(char **split);
+int		calc_z_value(int z, t_map *map);
 int		convert_hex_color(char *color, t_map *map);
+
 
 
 /*================================ FREE ======================================*/

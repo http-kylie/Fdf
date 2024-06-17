@@ -48,7 +48,7 @@ void	parse_map_mem(int fd, t_map *map)
 		j = -1;
 		while (split[++j])
 		{
-			map->z_2D[i][j] = ft_atoi(split[j]);
+			map->z_2D[i][j] = calc_z_value(ft_atoi(split[j]), map);
 			map->colors[i][j] = convert_hex_color(split[j], map);
 		}
 		free(line);

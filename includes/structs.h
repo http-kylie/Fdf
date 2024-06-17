@@ -48,12 +48,12 @@ typedef struct s_data		t_data;
  */
 typedef struct s_map
 {
-	int	**z_2D;
-	int	min_z;
-	int	max_z;
 	int	width;
 	int	height;
+	int	**z_2D;
 	int	**colors;
+	int	min_z;
+	int	max_z;
 	int	iscolor;
 }	t_map;
 

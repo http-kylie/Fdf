@@ -40,3 +40,13 @@ int		convert_hex_color(char *color, t_map *map)
 	}
 	return (WHITE);
 }
+
+int	calc_z_value(int z, t_map *map)
+{
+	printf("\nMAX_Z\n%i > map->%i ", z, map->max_z);
+	if (z < map->min_z)
+		map->min_z = z;
+	if (z > map->max_z)
+		map->max_z = z;
+	return (z);
+}
