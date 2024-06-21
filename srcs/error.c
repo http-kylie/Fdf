@@ -24,6 +24,10 @@ void	exit_err(int exit_status)
 		printf("%s: Map is empty...just like your soul\n", ERROR_TYPE(MAP_EMPTY_ERROR));
 	else if (exit_status == LIBFT_ERROR)
 		printf("%s: Your libft function failed\n", ERROR_TYPE(LIBFT_ERROR));
+	else if (exit_status == MLX_ERROR)
+		printf("%s: Your minilibx function failed\n", ERROR_TYPE(MLX_ERROR));
+	else if (exit_status == SUCCESS)
+		printf("%s: The program ran successfully\n", ERROR_TYPE(SUCCESS));
 	else
 		printf("%s: You're just a failure in general\n", ERROR_TYPE(ASIAN_FAILURE_ERROR));
 	exit(exit_status);

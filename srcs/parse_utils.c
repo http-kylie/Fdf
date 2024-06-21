@@ -17,9 +17,9 @@ int	find_width(char **split)
 {
 	int	i;
 
-	if (!split) //gnl failed
-		exit_err(LIBFT_ERROR);
-	if (!*split)
+	if (!split)
+		exit_err(MAP_EMPTY_ERROR);
+	if (!*split) //when would it return split->NULL
 		exit_err(MAP_EMPTY_ERROR);
 	i = 0;
 	while (split[i])
@@ -43,7 +43,7 @@ int		convert_hex_color(char *color, t_map *map)
 
 int	calc_z_value(int z, t_map *map)
 {
-	printf("\nMAX_Z\n%i > map->%i ", z, map->max_z);
+	//printf("\nMAX_Z\n%i > map->%i ", z, map->max_z);
 	if (z < map->min_z)
 		map->min_z = z;
 	if (z > map->max_z)

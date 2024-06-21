@@ -1,20 +1,30 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c99
-INCS = -I./includes/ -I./libft/
-
+LDFLAGS = -Lminilibx-linux -L/usr/lib -Llibft/
+LDLIBS = -lmlx_Linux -lXext -lX11 -lm -lz -lft
+INCS = -I./includes/ -I./libft/ -I/usr/include -Iminilibx_linux
 
 SRCDIR = srcs/
 SRCS_FIL = \
+			altitude.c \
+			bresenham.c \
+			color.c \
+			draw.c \
 			error.c \
 			free.c \
+			init_data.c \
 			init_map.c \
+			isometric.c \
+			key_handling.c \
 			main.c \
+			mlx_main.c \
 			parse_map.c \
 			parse_utils.c \
+			rotation.c \
 			temp.c \
-			# midpoint.c \
-			# moves_counter.c \
-			# operations.c \
+			transformation.c \
+			translation.c \
+			zoom.c \
 			# sort_reorder.c \
 			# target_finder.c  \
 			# validator.c
@@ -31,7 +41,7 @@ LIBFT.A = $(LIBFTDIR)libft.a
 
 
 NAME = $(FDF)
-FDF = FDF
+FDF = fdf
 
 all:  $(OBJDIR) $(FDF)
 
@@ -41,8 +51,8 @@ $(OBJDIR):
 		mkdir -p $(OBJDIR)
 
 $(FDF): $(OBJS)
-		make -C $(LIBFTDIR)
-		$(CC) $(CFLAGS) $(OBJS) -o $(FDF) -L$(LIBFTDIR) -lft
+		make -sC $(LIBFTDIR)
+		$(CC) $(CFLAGS) $(OBJS) -o $(FDF) $(LDFLAGS) $(LDLIBS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 		$(CC) $(CFLAGS) -c $< -o $@ $(INCS)

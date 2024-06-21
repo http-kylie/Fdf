@@ -69,3 +69,20 @@ void	free_split(char **split)
 		free(split[j++]);
 	free(split);
 }
+
+
+int	close_window(t_data *fdf)
+{
+	if (!fdf)
+		return (MEM_ALLOC_ERROR);
+	mlx_destroy_image(fdf->mlx, fdf->img->img);
+	mlx_destroy_window(fdf->mlx, fdf->win);
+	mlx_destroy_display(fdf->mlx);
+	if (fdf->img)
+		free(fdf->img);
+	free_map_mem(fdf->map);
+	free(fdf->mlx);
+	free(fdf);
+	exit_err(SUCCESS);
+	return (0);
+}

@@ -16,7 +16,33 @@
 # define STRUCTS_H
 
 typedef struct s_map		t_map;
+typedef struct s_img		t_img;
 typedef struct s_data		t_data;
+typedef struct s_point		t_point;
+
+/**
+ * @struct s_point
+ * @brief A structure representing a point in 3D space with color.
+ *
+ * @var s_point::x
+ * Member 'x' represents the x-coordinate of the point.
+ *
+ * @var s_point::y
+ * Member 'y' represents the y-coordinate of the point.
+ *
+ * @var s_point::z
+ * Member 'z' represents the z-coordinate of the point.
+ *
+ * @var s_point::color
+ * Member 'color' is an integer representing the color of the point.
+ */
+typedef struct s_point
+{
+	int	x;
+	int	y;
+	int	z;
+	int	color;
+}	t_point;
 
 /**
  * @struct s_map
@@ -134,7 +160,7 @@ typedef struct s_img
 typedef struct s_data
 {
 	void		*mlx;
-	void		*window;
+	void		*win;
 	t_map		*map;
 	t_img		*img;
 	int			shift_x;

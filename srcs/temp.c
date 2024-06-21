@@ -44,7 +44,7 @@ void	print_colors(t_map *map)
 
 void	print_map_mem(t_map *map)
 {
-	printf("MAP MEMBERS:\n");
+	printf("\nMAP MEMBERS:\n");
 	printf("height: %i\n", map->height);
 	printf("width: %i\n", map->height);
 	printf("z_2D: %p\n", map->z_2D);
@@ -52,4 +52,23 @@ void	print_map_mem(t_map *map)
 	printf("iscolor: %i\n", map->iscolor);
 	printf("min_z: %i\n", map->min_z);
 	printf("max_z: %i\n\n", map->max_z);
+}
+
+void	print_data(t_data *fdf)
+{
+	if (!fdf)
+		printf("Oops! fdf is null\n");
+	printf("\nFDF DATA MEMBERS:\n");
+	printf("fdf: %p\n", fdf);
+	printf("mlx: %p\n", fdf->mlx);
+	printf("win: %p\n", fdf->win);
+	printf("img: %p\n", fdf->img);
+	printf("shift_x: %i\n", fdf->shift_x);
+	printf("shift_y: %i\n", fdf->shift_y);
+	printf("rot_x: %f\n", fdf->rot_x);
+	printf("rot_y: %f\n", fdf->rot_y);
+	printf("rot_z: %f\n", fdf->rot_z);
+	printf("zoom: %f\n", fdf->zoom);
+	printf("isometric: %i\n", fdf->isometric);
+	printf("ff: %f\n", fdf->ff);
 }

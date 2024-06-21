@@ -35,9 +35,12 @@
 //#include "libft.h" ???
 
 #include <stdlib.h>
-#include <math.h>
+#include <stdio.h>
+//#include <math.h>
 #include <fcntl.h>
-#include <unistd.h>
+
+#include <mlx.h>
+#include "mlx.h"
 
 
 #endif

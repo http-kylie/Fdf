@@ -19,11 +19,12 @@
 #define SUCCESS 0
 #define FAILURE 1
 
-#define INVALID_ARGS_ERROR 2
-#define FILE_OPEN_ERROR 3
-#define MEM_ALLOC_ERROR 4
-#define MAP_EMPTY_ERROR 5
-#define LIBFT_ERROR 6
+#define INVALID_ARGS_ERROR  2
+#define FILE_OPEN_ERROR     3
+#define MEM_ALLOC_ERROR     4
+#define MAP_EMPTY_ERROR     5
+#define LIBFT_ERROR         6
+#define MLX_ERROR           7
 #define ASIAN_FAILURE_ERROR 8
 
 

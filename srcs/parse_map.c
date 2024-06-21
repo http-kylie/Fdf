@@ -24,7 +24,6 @@ void	parse_map_size(int fd, t_map *map)
 	while (line)
 	{
 		map->height++;
-		printf("height in loop: %i\n", map->height);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -45,6 +44,8 @@ void	parse_map_mem(int fd, t_map *map)
 	{
 		line = get_next_line(fd);
 		split = ft_split(line, ' ');
+		if (!split[0] || !split[1])
+			exit_err(ASIAN_FAILURE_ERROR);
 		j = -1;
 		while (split[++j])
 		{
