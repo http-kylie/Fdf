@@ -13,6 +13,22 @@
 #include "fdf.h"
 #include "libft.h"
 
+/**
+ * @brief Draws the map with transformations applied to each point.
+ *
+ * This function first clears the image buffer. If the zoom factor is not zero,
+ * it iterates over each point in the map.
+ *
+ * For each point, it applies a series of transformations and then draws a line
+ * to the next point in the same row and the same column using the Bresenham's
+ * line algorithm.
+ * 
+ * After all points have been processed, it puts the image to the window and
+ * draws the menu on top of it.
+ *
+ * @param fdf A pointer to a t_display structure that contains parameters
+ * to draw the map
+ */
 void	draw_map(t_data *fdf)
 {
 	int	x;
@@ -50,7 +66,7 @@ void	draw_map(t_data *fdf)
  * The color of the pixel is specified by the 'color' parameter. The function
  * stores the color value based off of the endianness of the system
  *
- * @param fdf Pointer to the t_data structure containing image data information.
+ * @param fdf A pointer to a t_display structure containing image data information.
  * @param x The x-coordinate of the pixel.
  * @param y The y-coordinate of the pixel.
  * @param color The color of the pixel.

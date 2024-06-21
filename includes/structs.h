@@ -48,8 +48,18 @@ typedef struct s_point
  * @struct s_map
  * @brief A structure representing a 3D map.
  *
+ * @var s_map::width
+ * Member 'width' represents the width of the map.
+ *
+ * @var s_map::height
+ * Member 'height' represents the height of the map.
+ *
  * @var s_map::z_2D
  * Member 'z_2D' is a 2D array representing the z-coordinates of the points on
+ * the map.
+ *
+ * @var s_map::colors
+ * Member 'colors' is a 2D array representing the colors of the points on
  * the map.
  *
  * @var s_map::min_z
@@ -57,16 +67,6 @@ typedef struct s_point
  *
  * @var s_map::max_z
  * Member 'max_z' is the maximum z-coordinate in the map.
- *
- * @var s_map::width
- * Member 'width' represents the width of the map.
- *
- * @var s_map::height
- * Member 'height' represents the height of the map.
- *
- * @var s_map::colors
- * Member 'colors' is a 2D array representing the colors of the points on
- * the map.
  *
  * @var s_map::iscolor
  * Member 'iscolor' is a flag indicating whether color information is present

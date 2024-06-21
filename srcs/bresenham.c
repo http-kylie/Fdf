@@ -48,7 +48,7 @@ void	init_bresenham_param(t_point *start, t_point *end,
  * drawing each one using the `put_pixel_to_img` function and updating the
  * current point and line error as it goes.
  *
- * @param vars The display variables.
+ * @param fdf The display variables.
  * @param start The start point of the line.
  * @param end The end point of the line.
  */

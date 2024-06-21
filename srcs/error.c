@@ -13,6 +13,19 @@
 #include "fdf.h"
 #include "libft.h"
 
+/** @brief Exits the program with a custom errror message based
+ * on the exit_status
+ *
+ * This function terminates the program with prints error messages based on type of error
+ * from the `exit_status` parameter. It colors the teminal output
+ * to yellow for displaying messages. If the program runs successfully,
+ * it exits the program with a success status code. Otherwise, it wi;;
+ *
+ * It exits the program with the same exit_status passed in as
+ * parameter.
+ *
+ * @param exit_status the exit status indicating the type of error
+ */
 void	exit_err(int exit_status)
 {
 	ft_printf("%s", COLOR_ERR);

@@ -13,6 +13,16 @@
 #include "fdf.h"
 #include "libft.h"
 
+/**
+ * @brief Allocates memory for members in the `map` structure.
+ *
+ * This function allocates memory for the fields `z_2D` and `colors` in
+ * the t_map structure. It creates a two-dimensional integer arrays to
+ * store z-values of the map based on the map's size.
+ * It also does error checking and handling for unsuccessful memory allocation.
+ *
+ * @param map A pointer to a t_map structure that contains the map data.
+ */
 void	alloc_map_mem(t_map *map)
 {
 	int	i;
@@ -37,6 +47,15 @@ void	alloc_map_mem(t_map *map)
 	}
 }
 
+/**
+ * @brief Frees the memory allocated for members in the `map` structure.
+ *
+ * This function frees the memory allocated integer array for the fields
+ * `z_2D` and `colors` in the t_map structure. It also frees the memory
+ * allocated for the t_map structure itself.
+ *
+ * @param map A pointer to a t_map structure that contains the map data.
+ */
 void	free_map_mem(t_map *map)
 {
 	int	i;
@@ -60,6 +79,14 @@ void	free_map_mem(t_map *map)
 	free(map);
 }
 
+/**
+ * @brief Frees the memory allocated from the return value of `ft_split`
+ *
+ * This function frees an array of strings by iterating
+ * over each string until it encounters the last NULL pointer.
+ *
+ * @param split an array of memory allocated strings.
+ */
 void	free_split(char **split)
 {
 	int	j;
@@ -70,7 +97,20 @@ void	free_split(char **split)
 	free(split);
 }
 
-
+/**
+ * @brief Closes the window, frees the associated resources, and
+ * exits the program successfully.
+ *
+ * This function frees the mlx resources stored within the display variables,
+ * prints a message to the console to indicate the program ran successsfully,
+ * and then exits the program with a success status code. It closes all
+ * mlx-related resources and is the last event called in the mlx event loop.
+ *
+ * @param fdf A pointer to a t_data structure that contains the display
+ * variables.
+ *
+ * @return Always returns 0.
+ */
 int	close_window(t_data *fdf)
 {
 	if (!fdf)
@@ -84,5 +124,5 @@ int	close_window(t_data *fdf)
 	free(fdf->mlx);
 	free(fdf);
 	exit_err(SUCCESS);
-	return (0);
+	return (SUCCESS);
 }

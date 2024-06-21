@@ -81,13 +81,3 @@ void	adjust_rot(int keycode, t_data *fdf)
 	if (keycode == KEY_6)
 		fdf->rot_z -= ROT;
 }
-
-// int	handle_keypress(int keycode, t_data *fdf)
-// {
-// 	if (keycode == ESC_KEY)
-// 		close_window(fdf);
-// 	if (keycode == R_KEY)
-// 		reset_default(fdf);
-// 	printf("Keypress: %d\n", keycode);
-// 	return (0);
-// }

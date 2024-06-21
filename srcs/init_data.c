@@ -14,11 +14,16 @@
 #include "libft.h"
 
 /**
- * @brief Allocates memory and initialises the t_data structure to default values
+ * @brief Creates a t_data and t_img structure and initialises `fdf`
+ * to default values
  *
+ * This function allocates memory for a t_data structure that contains
+ * all the display variables and a t_img structure that contains all
+ * the variables for mlx image manipulation.
+ * It initializes the `fdf` parameters to its default values.
  *
- *
- * @param map A pointer to the t_map structure containing the map information
+ * @param fdf A pointer to a t_data structure that contains the
+ * initialized display variables
  */
 t_data	*init_data(t_map *map)
 {
