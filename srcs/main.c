@@ -21,13 +21,7 @@ int	main(int ac, char **av)
 		exit_err(INVALID_ARGS_ERROR);
 	file = av[1];
 	map = init_map(file);
-	// printf("\nZ_2D:\n");
-	// print_z_2D(map);
-	// printf("WHITE: %i", WHITE);
-	// printf("\nCOLORS:\n");
-	// print_colors(map);
-	// printf("\nPRINT MAP MEMBERS:\n");
-	// print_map_mem(map);
 	begin_mlx(map);
 	free_map_mem(map);
+	return (SUCCESS);
 }

@@ -19,9 +19,9 @@
  * This function applies a series of transformations to the
  * x, y, and z coordinates of the point given as a parameter.
  * The order of transformation goes like this:
- * 1. Scaling
- * 2. Rotaion
- * 3. Translation
+ *
+ * 		Scaling -> Rotaion -> Translation
+ *
  * The z coordinate is scaled by a smaller factor than the x and y
  * coordinates to reduce its impact on the final position of the point.
  *
@@ -29,7 +29,7 @@
  * them sequentially to each point in the landscape. The order in which
  * these transformations are applied can affect the final result, as
  * matrix multiplication is not commutative.
- * 
+ *
  * @param fdf A pointer to a t_data structure that contains the display
  * variables and the transformation parameters.
  * @param point The point to which the transformations are applied.
@@ -56,7 +56,7 @@ t_point	transform_point(t_data *fdf, t_point point)
  *
  * This function creates a new point with the given x and y coordinates.
  * It sets the z coordinate of the point to the corresponding
- * value from the map's z_ij array. If the map has color data, it sets the
+ * value from the map's z_2D array. If the map has color data, it sets the
  * color of the point to the corresponding value from the
  * map's colors array. Otherwise, it calculates the color based on the z
  * coordinate.

@@ -15,37 +15,43 @@
 #ifndef MACROS_H
 # define MACROS_H
 
+/** @def W_WIDTH
+ *  @brief This macro defines the width of the window display
+ */
 # define W_WIDTH 1800
+/** @def W_HEIGHT
+ * @brief This macro defines the height of the window display
+ */
 # define W_HEIGHT 1000
 
-# define ERROR_TYPE(x) #x
+/**/
 # define HEX_BASE "0123456789ABCDEF"
+
 # define WHITE 0xFFFFFF
 
 
 /** @def TRANS
- *  @brief This macro defines the step size for translation movements.
+ *  @brief This macro defines the size of a single translation adjustment.
  */
 # define TRANS	1.5
 
 /** @def ROT
- *  @brief This macro defines the step size for rotation movements.
+ *  @brief This macro defines the size of a single rotation adjustment.
  */
 # define ROT	0.01
 
 /** @def ZOOM
- *  @brief This macro defines the step size for zoom movements.
+ *  @brief This macro defines the scale factor for a single zoom adjustment.
  */
 # define ZOOM	0.1
 
 /** @def FF
- *  @brief This macro defines the step size for flattening factor adjustments.
+ *  @brief This macro defines the flattening factor for a single altitude adjustments.
  */
 # define FF		0.01
 
-/**
- * @brief Scaling factor for the z-coordinate in 3D transformations.
- *
+/** @def SF
+ *  @brief This macro defines the scaling factor for the z-coordinate in 3D transformations.
  */
 # define SF		10
 
@@ -74,9 +80,33 @@
 #define KEY_5 53
 #define KEY_6 54
 
+/**
+ * @brief The number of bits to shift to the right to isolate the red
+ * component of a color.
+ */
 # define RS			16
+
+/**
+ * @brief The number of bits to shift to the right to isolate the green
+ * component of a color.
+ */
 # define GS			8
+
+/**
+ * @brief The bitmask to apply to isolate the blue component of a color.
+ */
 # define BM			0xFF
+
+/**
+ * @brief The number of bits to shift to isolate the alpha component
+ * in a 32-bit color value.
+ *
+ * This macro represents the number of bits to shift a 32-bit color
+ * value to the right to isolate the alpha component.
+ * The color value is assumed to be in the format 0xRRGGBBAA, where RR
+ * represents the red component, GG the green component,
+ * BB the blue component, and AA the alpha component.
+ */
 # define AS			24
 
 /**
@@ -103,6 +133,11 @@
  * @brief NEON ORANGE
  */
 # define N_ORANGE	0xFF6600
+
+/**
+ * @brief NEON PURPLE
+ */
+# define N_PURPLE	0xB026FF
 
 
 # define CYAN 0x00FFFF

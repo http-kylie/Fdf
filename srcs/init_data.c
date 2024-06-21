@@ -13,6 +13,13 @@
 #include "fdf.h"
 #include "libft.h"
 
+/**
+ * @brief Allocates memory and initialises the t_data structure to default values
+ *
+ *
+ *
+ * @param map A pointer to the t_map structure containing the map information
+ */
 t_data	*init_data(t_map *map)
 {
 	t_data	*fdf;
@@ -25,7 +32,6 @@ t_data	*init_data(t_map *map)
 		return (0);
 	fdf->map = map;
 	reset_default(fdf);
-	//print_data(fdf);
 	return (fdf);
 }
 
@@ -37,6 +43,14 @@ t_data	*init_data(t_map *map)
  * `ff`, `rot_x`, `rot_y`, and `rot_z` fields
  * of the `fdf` structure to their default values.
  *
+ * Formula for scaling factor calculation:
+ * [ horizontal_scaling_factor = window_width / map_width ]
+ * [ Vertical_scaling_factor = window_height / map_height ]
+ *
+ * By dividing both scaling factors by 2, it allows the map to
+ * potentially occupy up to half the window in each dimension.
+ * By choosing the maximum of these two values, it ensures that
+ * the map will fit in both dimensions, while being as large as possible.
  *
  * @param fdf A pointer to the t_data structure to reset.
  */

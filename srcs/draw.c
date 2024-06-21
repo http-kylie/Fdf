@@ -44,14 +44,13 @@ void	draw_map(t_data *fdf)
 
 
 /**
- * @brief Puts a pixel to the image.
+ * @brief Puts a pixel onto the image.
  *
  * This function puts a pixel at the specified (x, y) coordinates in the image.
  * The color of the pixel is specified by the 'color' parameter. The function
- * takes into account the endianness of the system to correctly store the color
- * value.
+ * stores the color value based off of the endianness of the system
  *
- * @param fdf Pointer to the t_data structure containing image information.
+ * @param fdf Pointer to the t_data structure containing image data information.
  * @param x The x-coordinate of the pixel.
  * @param y The y-coordinate of the pixel.
  * @param color The color of the pixel.

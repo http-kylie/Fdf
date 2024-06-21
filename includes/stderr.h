@@ -15,6 +15,12 @@
 #ifndef STDERR_H
 # define STDERR_H
 
+# define ERROR_TYPE(x) #x
+
+/** @brief This is the ANSI escape code for yellow
+ */
+# define COLOR_ERR "\033[33m"
+# define RESET_ERR "\033[0m"
 
 #define SUCCESS 0
 #define FAILURE 1

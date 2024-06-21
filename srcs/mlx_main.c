@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "mlx.h"
-/* FINISH init_mlx*/
 
-
+/**
+ * 
+ */
 void	init_mlx(t_data *fdf)
 {
 	fdf->mlx = mlx_init();
@@ -33,8 +33,6 @@ void	init_mlx(t_data *fdf)
 	}
 	fdf->img->addr = mlx_get_data_addr(
 		fdf->img->img, &fdf->img->bpp, &fdf->img->ln_len, &fdf->img->endian);
-	// if (!fdf->img->addr)
-	// 	printf("get_data_addr isnt working\n");
 }
 
 void	begin_mlx(t_map *map)
@@ -50,5 +48,3 @@ void	begin_mlx(t_map *map)
 	draw_map(fdf);
 	mlx_loop(fdf->mlx);
 }
-
-	//print_data(fdf);

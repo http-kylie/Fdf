@@ -23,18 +23,18 @@
  *
  * @param start The start of the range.
  * @param end The end of the range.
- * @param cval The current value for which the percentage within the range is to
+ * @param value The current value for which the percentage within the range is to
  * be calculated.
  * @return The percentage of the current value within the range, expressed as a
  * double. If the range is zero, the function returns 1.0.
  */
-double	calc_percentage(int start, int end, int cval)
+double	calc_percentage(int start, int end, int value)
 {
 	double	range;
 	double	position;
 
 	range = end - start;
-	position = cval - start;
+	position = value - start;
 	if (!range)
 		return (1.0);
 	return (position / range);
@@ -59,26 +59,25 @@ int	calc_light(int start, int end, double percentage)
 }
 
 /**
- * @brief Calculates the color based on the current, start, end points
- * and the delta.
+ * @brief Calculates interpolated color based on the current, start,
+ * end pointsand the delta.
  *
- * This function calculates the color based on the current point, start point,
- * end point, and the delta.
- * It first checks if the color of the current point is the same as the
- * end point, if so, it returns the current color.
- * Then it calculates the percentage based on the larger delta (x or y).
- * Finally, it calculates the red, green, and blue components of the color using
- * the `calc_light` function and the percentage, and combines them into a single
- * color.
+ * This function uses linear interpolation to calculate an intermediate color value
+ * of the current point based on the color of the start and end point. First, it
+ * checks if the color of the current point is the same as the end point, if so,
+ * it returns the current color. Then it calculates the percentage based on the
+ * larger delta (x or y). Finally, it calculates the red, green, and blue components
+ * of the color using the `calc_light` function and the percentage, and combines them
+ * into a single color.
  *
  * Colors are stored in the following hex format:
- * 0 x | F F | F F | F F |
+ * 0 x | F F | F F   | F F  |
  *     | red | green | blue |
  *
  * So what we can do is mask and isolate each color channel using bit shifting
  * and perform linear interpolation on each channel before recombining.
  * Each channel is 8 bits.
- * 
+ *
  * @param current The current point.
  * @param start The start point.
  * @param end The end point.
@@ -107,30 +106,32 @@ int	calc_color(t_point current, t_point start, t_point end, t_point delta)
 }
 
 /**
- * @brief Calculates the color based on the current z value.
+ * @brief Calculates the gradient color based on the current z value.
  *
- * This function calculates the color based on the current z value.
+ * This function calculates the gradient color based on the current z value.
  * It first calculates the percentage of the current z value within the range of
- * z values in the map.
- * Then it returns a color based on the percentage.
+ * z values in the map. Then it returns a color based on the percentage.
+ *
+ * Lower gradients have warmer tones,
+ * higher gradient have cooler tones.
  *
  * @param fdf The display variables.
- * @param cz The current z value.
- * @return The calculated color.
+ * @param height The current z value.
+ * @return The calculated gradient color.
  */
-int	calc_z_color(t_data *fdf, int cz)
+int	calc_z_color(t_data *fdf, int height)
 {
 	double	percentage;
 
-	percentage = calc_percentage(fdf->map->min_z, fdf->map->max_z, cz);
+	percentage = calc_percentage(fdf->map->min_z, fdf->map->max_z, height);
 	if (percentage < 0.1)
 		return (N_PINK);
 	else if (percentage < 0.3)
-		return (N_GREEN);
-	else if (percentage < 0.5)
-		return (N_BLUE);
-	else if (percentage < 0.7)
-		return (N_YELLOW);
-	else
 		return (N_ORANGE);
+	else if (percentage < 0.5)
+		return (N_YELLOW);
+	else if (percentage < 0.7)
+		return (N_BLUE);
+	else
+		return (N_PURPLE);
 }

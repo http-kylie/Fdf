@@ -13,8 +13,6 @@
 #ifndef FDF_H
 # define FDF_H
 
-						#include <stdio.h>
-
 /**
  * @headerfile structs.h
  * @brief header file containing all structures used
@@ -32,15 +30,9 @@
 #include "stderr.h"
 #include "macros.h"
 #include "functions.h"
-//#include "libft.h" ???
 
 #include <stdlib.h>
-#include <stdio.h>
-//#include <math.h>
 #include <fcntl.h>
-
 #include <mlx.h>
-#include "mlx.h"
-
 
 #endif
