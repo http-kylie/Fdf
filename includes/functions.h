@@ -86,7 +86,7 @@ void	rot_z(t_data *fdf, int *x, int *y);
 
 /*============================ TRANSFORMATION.C ===============================*/
 
-t_point	transform_points(t_data *fdf, t_point point);
+t_point	transform_point(t_data *fdf, t_point point);
 t_point	create_new_point(int x, int y, t_data *fdf);
 
 /*============================= TRANSLATION.C =================================*/

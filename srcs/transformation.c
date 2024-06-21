@@ -16,20 +16,26 @@
 /**
  * @brief Applies a series of transformations to a point.
  *
- * This function scales the x, y, and z coordinates of the point by the zoom
- * factor,
- * applies a series of rotations to the point, converts the point to
- * isometric coordinates,
- * and then shifts the point by the shift_x and shift_y values.
- * The z coordinate is scaled by a smaller factor than the x and y coordinates
- * to reduce its impact on the final position of the point.
+ * This function applies a series of transformations to the
+ * x, y, and z coordinates of the point given as a parameter.
+ * The order of transformation goes like this:
+ * 1. Scaling
+ * 2. Rotaion
+ * 3. Translation
+ * The z coordinate is scaled by a smaller factor than the x and y
+ * coordinates to reduce its impact on the final position of the point.
  *
+ * The combined effect of these transformations is achieved by applying
+ * them sequentially to each point in the landscape. The order in which
+ * these transformations are applied can affect the final result, as
+ * matrix multiplication is not commutative.
+ * 
  * @param fdf A pointer to a t_data structure that contains the display
  * variables and the transformation parameters.
  * @param point The point to which the transformations are applied.
  * @return The transformed point.
  */
-t_point	transform_points(t_data *fdf, t_point point)
+t_point	transform_point(t_data *fdf, t_point point)
 {
 	point.x *= fdf->zoom;
 	point.y *= fdf->zoom;

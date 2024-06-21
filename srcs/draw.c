@@ -13,19 +13,6 @@
 #include "fdf.h"
 #include "libft.h"
 
-// void	draw(t_data *fdf)
-// {
-// 	for (int i = W_WIDTH * 0.1; i < W_WIDTH * 0.9; i++) {
-// 		for (int j = W_HEIGHT * 0.1; j < W_HEIGHT * 0.9; j++) {
-// 			put_pixel_to_img(fdf->img, i, j, WHITE);
-// 		}
-// 	}
-// 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img->img, 0, 0);
-// }
-
-
-// ZOOM dont understand, where is it calculated? how is the object scaled up/down based on the zoom?
-// Research Zoom/Scaling Factor in transformation.c and util.s reset()
 void	draw_map(t_data *fdf)
 {
 	int	x;
@@ -42,12 +29,12 @@ void	draw_map(t_data *fdf)
 			{
 				if (x < fdf->map->width - 1)
 					bresenham(fdf,
-						transform_points(fdf, create_new_point(x, y, fdf)),
-						transform_points(fdf, create_new_point(x + 1, y, fdf)));
+						transform_point(fdf, create_new_point(x, y, fdf)),
+						transform_point(fdf, create_new_point(x + 1, y, fdf)));
 				if (y < fdf->map->height - 1)
 					bresenham(fdf,
-						transform_points(fdf, create_new_point(x, y, fdf)),
-						transform_points(fdf, create_new_point(x, y + 1, fdf)));
+						transform_point(fdf, create_new_point(x, y, fdf)),
+						transform_point(fdf, create_new_point(x, y + 1, fdf)));
 			}
 		}
 	}
@@ -93,9 +80,9 @@ void	put_pixel_to_img(t_data *fdf, int x, int y, int color)
 }
 
 /**
- * @brief Draws the control information on the window.
+ * @brief Draws a menu onto the windows displaying the control keys and information.
  *
- * This function uses the MiniLibX library's mlx_string_put function to draw
+ * This function uses the mlx_string_put function to draw a menu containing
  * the control information on the window. The control information includes
  * the keys to press to perform various actions, such as resetting the view,
  * moving the view, zooming in and out, changing the
@@ -151,4 +138,15 @@ void	draw_control_menu(t_data *fdf)
 // 	else
 // 		while (++i < img->bpp / 8)
 // 			*pixel++ = *(color_ptr + (img->bpp / 8 - 1 - i));
+// }
+
+
+// void	draw(t_data *fdf)
+// {
+// 	for (int i = W_WIDTH * 0.1; i < W_WIDTH * 0.9; i++) {
+// 		for (int j = W_HEIGHT * 0.1; j < W_HEIGHT * 0.9; j++) {
+// 			put_pixel_to_img(fdf->img, i, j, WHITE);
+// 		}
+// 	}
+// 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img->img, 0, 0);
 // }

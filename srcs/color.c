@@ -71,6 +71,14 @@ int	calc_light(int start, int end, double percentage)
  * the `calc_light` function and the percentage, and combines them into a single
  * color.
  *
+ * Colors are stored in the following hex format:
+ * 0 x | F F | F F | F F |
+ *     | red | green | blue |
+ *
+ * So what we can do is mask and isolate each color channel using bit shifting
+ * and perform linear interpolation on each channel before recombining.
+ * Each channel is 8 bits.
+ * 
  * @param current The current point.
  * @param start The start point.
  * @param end The end point.

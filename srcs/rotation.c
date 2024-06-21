@@ -13,15 +13,19 @@
 #include "fdf.h"
 #include <math.h>
 
-
-
-// rotations math still dun understand details
 /**
  * @brief Rotates a point around the x-axis.
  *
- * This function rotates a point around the x-axis by an angle specified in
- * the fdf structure. The rotation is done in-place,
- * meaning the original y and z coordinates are modified.
+ * This function performs a rotation transformation matrix
+ * onto a given point which rotates the point around
+ * the x-axis by an angle specified inthe fdf structure.
+ * The rotation is done in-place, meaning the original y
+ * and z coordinates are modified.
+ *
+ * The following transformation matrix is applied:
+ * | 1  0      0    |
+ * | 0  cos(θ) -sin(θ)|
+ * | 0  sin(θ)  cos(θ)|
  *
  * @param fdf A pointer to a t_data structure that contains the
  * rotation angle.

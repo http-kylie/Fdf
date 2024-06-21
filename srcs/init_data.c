@@ -37,6 +37,7 @@ t_data	*init_data(t_map *map)
  * `ff`, `rot_x`, `rot_y`, and `rot_z` fields
  * of the `fdf` structure to their default values.
  *
+ *
  * @param fdf A pointer to the t_data structure to reset.
  */
 void	reset_default(t_data *fdf)

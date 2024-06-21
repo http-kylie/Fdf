@@ -21,7 +21,7 @@
  * If the keycode is MS_KEY, the zoom level is increased, as long as it's less
  * than INT_MAX.
  *
- * @param keycode The keycode that determines how the zoom level is adjusted.
+ * @param keycode The keycode retrieved from user input.
  * @param fdf The display variables that include the zoom level to be adjusted.
  */
 void	adjust_zoom(int keycode, t_data *fdf)
