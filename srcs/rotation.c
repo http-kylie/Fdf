@@ -13,12 +13,7 @@
 #include "fdf.h"
 #include <math.h>
 
-/*
- * The rotations are performed in-place to optimize memory usage and
- avoid creating temporary variables or structures to hold the rotated
- coordinates. By modifying the original coordinates directly, the functions
- can work with the existing data structures without the need for additional memory allocations or copies.
-*/
+
 
 /**
  * @brief Rotates a point around the x-axis.
@@ -104,3 +99,9 @@ void	rot_z(t_data *fdf, int *x, int *y)
 	*x = (*x * cos(fdf->rot_z)) - (*y * sin(fdf->rot_z));
 	*y = (prev_x * sin(fdf->rot_z)) + (*y * cos(fdf->rot_z));
 }
+/*
+ * The rotations are performed in-place to optimize memory usage and
+ avoid creating temporary variables or structures to hold the rotated
+ coordinates. By modifying the original coordinates directly, the functions
+ can work with the existing data structures without the need for additional memory allocations or copies.
+*/

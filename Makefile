@@ -21,7 +21,6 @@ SRCS_FIL = \
 			parse_map.c \
 			parse_utils.c \
 			rotation.c \
-			temp.c \
 			transformation.c \
 			translation.c \
 			zoom.c \
