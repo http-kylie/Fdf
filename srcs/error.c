@@ -43,7 +43,7 @@ void	exit_err(int exit_status)
 	else if (exit_status == MLX_ERROR)
 		ft_printf("MLX_ERROR: Your minilibx function failed\n");
 	else if (exit_status == SUCCESS)
-		ft_printf("SUCCESS: The program ran successfully\n", ERROR_TYPE());
+		ft_printf("SUCCESS: The program ran successfully\n");
 	else
 		ft_printf("That's not a valid map!\n");
 	ft_printf("%s", RESET_ERR_MSG);
