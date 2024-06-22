@@ -40,7 +40,6 @@ t_data	*init_data(t_map *map)
 	return (fdf);
 }
 
-
 /**
  * @brief Resets the display variables for a map.
  *

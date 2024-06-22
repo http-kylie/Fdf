@@ -36,8 +36,8 @@ void	init_mlx(t_data *fdf)
 		close_window(fdf);
 		exit_err(MLX_ERROR);
 	}
-	fdf->img->addr = mlx_get_data_addr(
-		fdf->img->img, &fdf->img->bpp, &fdf->img->ln_len, &fdf->img->endian);
+	fdf->img->addr = mlx_get_data_addr(fdf->img->img,
+			&fdf->img->bpp, &fdf->img->ln_len, &fdf->img->endian);
 }
 
 /**
@@ -47,7 +47,8 @@ void	init_mlx(t_data *fdf)
  * and initializes all the mlx vairables in the `fdf` structure.
  *
  * In the main event loop, hooks are setup to handle events such as key press
- * and closing of window, draws the initial frame, and enters the main event loop.
+ * and closing of window, draws the initial frame, and enters the main event
+ * loop.
  *
  * @param map A pointer to a t_map structure that contains the map data.
  */
@@ -59,7 +60,7 @@ void	begin_mlx(t_map *map)
 	if (!fdf)
 		exit_err(close_window(fdf));
 	init_mlx(fdf);
-	mlx_hook(fdf->win, 2, (1L<<0), &handle_keypress, fdf);
+	mlx_hook(fdf->win, 2, (1L << 0), &handle_keypress, fdf);
 	mlx_hook(fdf->win, 17, 0, &close_window, fdf);
 	draw_map(fdf);
 	mlx_loop(fdf->mlx);

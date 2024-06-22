@@ -38,7 +38,7 @@ int	handle_keypress(int keycode, t_data *fdf)
 		reset_default(fdf);
 	if (keycode == TAB_KEY)
 		fdf->isometric ^= 1;
-	if (keycode ==  PS_KEY || keycode == MS_KEY)
+	if (keycode == PS_KEY || keycode == MS_KEY)
 		adjust_zoom(keycode, fdf);
 	if (keycode == W_KEY || keycode == A_KEY
 		|| keycode == S_KEY || keycode == D_KEY)
@@ -51,7 +51,6 @@ int	handle_keypress(int keycode, t_data *fdf)
 	draw_map(fdf);
 	return (0);
 }
-
 
 /**
  * @brief Adjusts the rotation of the display based on the provided keycode.

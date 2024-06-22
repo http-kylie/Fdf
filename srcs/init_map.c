@@ -45,5 +45,6 @@ t_map	*init_map(char *filename)
 	if (fd < 0)
 		exit_err(FILE_OPEN_ERROR);
 	parse_map_mem(fd, map);
+	close(fd);
 	return (map);
 }

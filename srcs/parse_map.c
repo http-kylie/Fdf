@@ -52,7 +52,7 @@ void	parse_map_size(int fd, t_map *map)
  * splits each line into an array of strings to be used in parsing.
  *
  * Each string in the split array is converted to an integer with `ft_atoi`
- * for `z_2D` and to a color with `convert_hex_color` for `colors`.
+ * for `z_2d` and to a color with `convert_hex_color` for `colors`.
  *
  * @param fd The file descriptor of the map file
  * @param map A pointer to the uninitialised t_map structure
@@ -78,11 +78,10 @@ void	parse_map_mem(int fd, t_map *map)
 		j = -1;
 		while (split[++j])
 		{
-			map->z_2D[i][j] = calc_z_value(ft_atoi(split[j]), map);
+			map->z_2d[i][j] = calc_z_value(ft_atoi(split[j]), map);
 			map->colors[i][j] = convert_hex_color(split[j], map);
 		}
 		free(line);
 		free_split(split);
 	}
-	close(fd);
 }

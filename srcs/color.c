@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_calculation.c                                :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kytan <kytan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 21:58:34 by kytan             #+#    #+#             */
-/*   Updated: 2024/06/19 21:58:34 by kytan            ###   ########.fr       */
+/*   Updated: 2024/06/22 14:08:13 by kytan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,13 @@ int	calc_light(int start, int end, double percentage)
  * @brief Calculates interpolated color based on the current, start,
  * end pointsand the delta.
  *
- * This function uses linear interpolation to calculate an intermediate color value
- * of the current point based on the color of the start and end point. First, it
- * checks if the color of the current point is the same as the end point, if so,
- * it returns the current color. Then it calculates the percentage based on the
- * larger delta (x or y). Finally, it calculates the red, green, and blue components
- * of the color using the `calc_light` function and the percentage, and combines them
+ * This function uses linear interpolation to calculate an intermediate
+ * color value of the current point based on the color of the start and
+ * end point. First, it checks if the color of the current point is the
+ * same as the end point, if so, it returns the current color. Then it
+ * calculates the percentage based on the larger delta (x or y). Finally,
+ * it calculates the red, green, and blue components of the color using
+ * the `calc_light` function and the percentage, and combines them
  * into a single color.
  *
  * Colors are stored in the following hex format:

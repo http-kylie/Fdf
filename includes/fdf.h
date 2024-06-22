@@ -24,15 +24,16 @@
  * @brief header file containing the defined macros used
  *
  * @headerfile functions.h
- * @brief header file containing the function prototypes of source directory functions
+ * @brief header file containing the function prototypes of source
+ * directory functions
  */
-#include "structs.h"
-#include "stderr.h"
-#include "macros.h"
-#include "functions.h"
+# include "structs.h"
+# include "stderr.h"
+# include "macros.h"
+# include "functions.h"
 
-#include <stdlib.h>
-#include <fcntl.h>
-#include <mlx.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <mlx.h>
 
 #endif

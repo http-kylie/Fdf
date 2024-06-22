@@ -16,7 +16,7 @@
 /**
  * @brief Allocates memory for members in the `map` structure.
  *
- * This function allocates memory for the fields `z_2D` and `colors` in
+ * This function allocates memory for the fields `z_2d` and `colors` in
  * the t_map structure. It creates a two-dimensional integer arrays to
  * store z-values of the map based on the map's size.
  * It also does error checking and handling for unsuccessful memory allocation.
@@ -27,9 +27,9 @@ void	alloc_map_mem(t_map *map)
 {
 	int	i;
 
-	map->z_2D = ft_calloc(map->height, sizeof(int *));
+	map->z_2d = ft_calloc(map->height, sizeof(int *));
 	map->colors = ft_calloc(map->height, sizeof(int *));
-	if (!map->z_2D || !map->colors)
+	if (!map->z_2d || !map->colors)
 	{
 		free_map_mem(map);
 		exit_err(MEM_ALLOC_ERROR);
@@ -37,9 +37,9 @@ void	alloc_map_mem(t_map *map)
 	i = -1;
 	while (++i < map->height)
 	{
-		map->z_2D[i] = ft_calloc(map->width, sizeof(int));
+		map->z_2d[i] = ft_calloc(map->width, sizeof(int));
 		map->colors[i] = ft_calloc(map->width, sizeof(int));
-		if (!map->z_2D[i] || !map->colors[i])
+		if (!map->z_2d[i] || !map->colors[i])
 		{
 			free_map_mem(map);
 			exit_err(MEM_ALLOC_ERROR);
@@ -51,7 +51,7 @@ void	alloc_map_mem(t_map *map)
  * @brief Frees the memory allocated for members in the `map` structure.
  *
  * This function frees the memory allocated integer array for the fields
- * `z_2D` and `colors` in the t_map structure. It also frees the memory
+ * `z_2d` and `colors` in the t_map structure. It also frees the memory
  * allocated for the t_map structure itself.
  *
  * @param map A pointer to a t_map structure that contains the map data.
@@ -62,12 +62,12 @@ void	free_map_mem(t_map *map)
 
 	if (!map)
 		return ;
-	if (map->z_2D)
+	if (map->z_2d)
 	{
 		i = -1;
-		while (++i < map->height && map->z_2D[i])
-			free(map->z_2D[i]);
-		free(map->z_2D);
+		while (++i < map->height && map->z_2d[i])
+			free(map->z_2d[i]);
+		free(map->z_2d);
 	}
 	if (map->colors)
 	{

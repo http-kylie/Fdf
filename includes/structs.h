@@ -12,9 +12,6 @@
 
 #include "fdf.h"
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
-
 typedef struct s_map		t_map;
 typedef struct s_img		t_img;
 typedef struct s_data		t_data;
@@ -54,8 +51,8 @@ typedef struct s_point
  * @var s_map::height
  * Member 'height' represents the height of the map.
  *
- * @var s_map::z_2D
- * Member 'z_2D' is a 2D array representing the z-coordinates of the points on
+ * @var s_map::z_2d
+ * Member 'z_2d' is a 2D array representing the z-coordinates of the points on
  * the map.
  *
  * @var s_map::colors
@@ -76,7 +73,7 @@ typedef struct s_map
 {
 	int	width;
 	int	height;
-	int	**z_2D;
+	int	**z_2d;
 	int	**colors;
 	int	min_z;
 	int	max_z;
@@ -172,5 +169,3 @@ typedef struct s_data
 	int			isometric;
 	float		ff;
 }	t_data;
-
-#endif

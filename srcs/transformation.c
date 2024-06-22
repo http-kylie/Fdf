@@ -49,14 +49,13 @@ t_point	transform_point(t_data *fdf, t_point point)
 	return (point);
 }
 
-
 /**
  * @brief Creates a new point with the given x and y coordinates and
  * the corresponding z coordinate and color from the map.
  *
  * This function creates a new point with the given x and y coordinates.
  * It sets the z coordinate of the point to the corresponding
- * value from the map's z_2D array. If the map has color data, it sets the
+ * value from the map's z_2d array. If the map has color data, it sets the
  * color of the point to the corresponding value from the
  * map's colors array. Otherwise, it calculates the color based on the z
  * coordinate.
@@ -73,7 +72,7 @@ t_point	create_new_point(int x, int y, t_data *fdf)
 
 	point.x = x;
 	point.y = y;
-	point.z = fdf->map->z_2D[y][x];
+	point.z = fdf->map->z_2d[y][x];
 	if (fdf->map->iscolor)
 		point.color = fdf->map->colors[y][x];
 	else

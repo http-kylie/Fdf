@@ -47,9 +47,10 @@ int	find_width(char **split)
  * @return The parsed color as an integer. If the color string does not start
  * with 'x', the function returns the default color (WHITE).
  */
-int		convert_hex_color(char *color, t_map *map)
+int	convert_hex_color(char *color, t_map *map)
 {
-	while (ft_isdigit(*color) || *color == '-' || *color == '+' || *color == ',')
+	while (ft_isdigit(*color) || *color == '-'
+		|| *color == '+' || *color == ',')
 		color++;
 	if (*color && *color == 'x')
 	{

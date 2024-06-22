@@ -6,7 +6,7 @@
 /*   By: kytan <kytan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 18:05:21 by kytan             #+#    #+#             */
-/*   Updated: 2024/06/19 18:05:21 by kytan            ###   ########.fr       */
+/*   Updated: 2024/06/22 14:01:41 by kytan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
  *
  * @param start The start point of the line.
  * @param end The end point of the line.
- * @param delta The absolute differences in the x and y coordinates between the start and end points.
+ * @param delta The absolute differences in the x and y coordinates
+ * between the start and end points.
  * @param sign The signs of the x and y directions.
  */
 void	init_bresenham_param(t_point *start, t_point *end,
@@ -38,7 +39,6 @@ void	init_bresenham_param(t_point *start, t_point *end,
 	if (start->y < end->y)
 		sign->y = 1;
 }
-
 
 /**
  * @brief Draws a line using the Bresenham line algorithm.

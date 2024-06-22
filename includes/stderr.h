@@ -12,20 +12,17 @@
 
 #include "fdf.h"
 
-#ifndef STDERR_H
-# define STDERR_H
-
 /** @brief This macro converts the parameter (x) into a string literal.
+ 
+#define ERROR_TYPE(x) #x*/
+/** @brief This macro is the ANSI escape code for setting terminal
+ *  output color to yellow
  */
-# define ERROR_TYPE(x) #x
-
-/** @brief This macro is the ANSI escape code for setting terminal output color to yellow
- */
-# define COLOR_ERR_MSG "\033[33m"
+#define COLOR_ERR_MSG "\033[33m"
 
 /** @brief This macro is to reset ANSI escape code coloring
  */
-# define RESET_ERR_MSG "\033[0m"
+#define RESET_ERR_MSG "\033[0m"
 
 /** @brief This macro defines the exit status SUCCESS for error handling
  */
@@ -35,7 +32,8 @@
  */
 #define FAILURE 1
 
-/** @brief This macro defines the exit status INVALID_ARGS_ERROR for error handling
+/** @brief This macro defines the exit status INVALID_ARGS_ERROR for error
+ * 	handling
  */
 #define INVALID_ARGS_ERROR  2
 
@@ -59,10 +57,7 @@
  */
 #define MLX_ERROR           7
 
-/** @brief This macro defines the exit status ASIAN_FAILURE_ERROR for error handling
+/** @brief This macro defines the exit status ASIAN_FAILURE_ERROR for
+ * 	error handling
  */
 #define ASIAN_FAILURE_ERROR 8
-
-
-
-#endif

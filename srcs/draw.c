@@ -6,7 +6,7 @@
 /*   By: kytan <kytan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:15:29 by kytan             #+#    #+#             */
-/*   Updated: 2024/06/19 15:15:29 by kytan            ###   ########.fr       */
+/*   Updated: 2024/06/22 14:09:06 by kytan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	draw_map(t_data *fdf)
 	draw_control_menu(fdf);
 }
 
-
 /**
  * @brief Puts a pixel onto the image.
  *
@@ -66,7 +65,9 @@ void	draw_map(t_data *fdf)
  * The color of the pixel is specified by the 'color' parameter. The function
  * stores the color value based off of the endianness of the system
  *
- * @param fdf A pointer to a t_display structure containing image data information.
+ * @param fdf A pointer to a t_display structure containing image data
+ * information.
+ * 
  * @param x The x-coordinate of the pixel.
  * @param y The y-coordinate of the pixel.
  * @param color The color of the pixel.
@@ -95,7 +96,8 @@ void	put_pixel_to_img(t_data *fdf, int x, int y, int color)
 }
 
 /**
- * @brief Draws a menu onto the windows displaying the control keys and information.
+ * @brief Draws a menu onto the windows displaying the control
+ * keys and information.
  *
  * This function uses the mlx_string_put function to draw a menu containing
  * the control information on the window. The control information includes
@@ -154,8 +156,6 @@ void	draw_control_menu(t_data *fdf)
 // 		while (++i < img->bpp / 8)
 // 			*pixel++ = *(color_ptr + (img->bpp / 8 - 1 - i));
 // }
-
-
 // void	draw(t_data *fdf)
 // {
 // 	for (int i = W_WIDTH * 0.1; i < W_WIDTH * 0.9; i++) {
