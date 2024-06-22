@@ -28,7 +28,7 @@
  */
 void	exit_err(int exit_status)
 {
-	ft_printf("%s", COLOR_ERR);
+	ft_printf("%s", COLOR_ERR_MSG);
 	if (exit_status == INVALID_ARGS_ERROR)
 		ft_printf("%s: { Usage: ./fdf <map>.fdf }\n", ERROR_TYPE(INVALID_ARGS_ERROR));
 	else if (exit_status == FILE_OPEN_ERROR)
@@ -45,6 +45,6 @@ void	exit_err(int exit_status)
 		ft_printf("%s: The program ran successfully\n", ERROR_TYPE(SUCCESS));
 	else
 		ft_printf("%s: You're just a failure in general\n", ERROR_TYPE(ASIAN_FAILURE_ERROR));
-	ft_printf("%s", RESET_ERR);
+	ft_printf("%s", RESET_ERR_MSG);
 	exit(exit_status);
 }

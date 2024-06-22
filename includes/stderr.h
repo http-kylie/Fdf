@@ -21,11 +21,11 @@
 
 /** @brief This macro is the ANSI escape code for setting terminal output color to yellow
  */
-# define COLOR_ERR "\033[33m"
+# define COLOR_ERR_MSG "\033[33m"
 
 /** @brief This macro is to reset ANSI escape code coloring
  */
-# define RESET_ERR "\033[0m"
+# define RESET_ERR_MSG "\033[0m"
 
 /** @brief This macro defines the exit status SUCCESS for error handling
  */

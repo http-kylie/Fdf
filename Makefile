@@ -24,9 +24,6 @@ SRCS_FIL = \
 			transformation.c \
 			translation.c \
 			zoom.c \
-			# sort_reorder.c \
-			# target_finder.c  \
-			# validator.c
 
 SRCS = $(addprefix $(SRCDIR), $(SRCS_FIL))
 

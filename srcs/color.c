@@ -112,9 +112,6 @@ int	calc_color(t_point current, t_point start, t_point end, t_point delta)
  * It first calculates the percentage of the current z value within the range of
  * z values in the map. Then it returns a color based on the percentage.
  *
- * Lower gradients have warmer tones,
- * higher gradient have cooler tones.
- *
  * @param fdf The display variables.
  * @param height The current z value.
  * @return The calculated gradient color.

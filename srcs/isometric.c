@@ -12,6 +12,7 @@
 
 #include "fdf.h"
 #include <math.h>
+
 /**
  * @brief Converts the given coordinates to an isometric projection.
  *

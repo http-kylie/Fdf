@@ -178,7 +178,7 @@
 /**
  *  @brief This macro represents the RBG color CYAN
  */
-# define CYAN		0x00FFFF
+# define CYAN		0x07C1FF
 
 /**
  *  @brief This macro represents the RGB color NEON PINK
